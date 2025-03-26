@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern & Interactive Website</title>
+    <title>My Academic Website</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <h1>Welcome to My Research Page</h1>
-        <p>Exploring the intersections of Computer Science and Interdisciplinary Applications</p>
-        <button id="toggle-mode">Toggle Dark Mode</button>
-    </header>
-    
-    <nav class="navbar">
+
+    <nav class="sidebar">
         <ul>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#research">Research</a></li>
@@ -23,32 +18,39 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    
-    <main>
-        <section id="about" class="section">
-            <h1>About Me</h1>
-            <p>Write a short bio about your research interests and background.</p>
+
+    <div class="content">
+        <section id="home" class="half-screen">
+            <h1>Welcome to My Website</h1>
+            <p>Exploring Computer Science with Interdisciplinary Applications.</p>
         </section>
-        
-        <section id="cv" class="section">
-            <h1>Curriculum Vitae</h1>
-            <p>Include a downloadable PDF or list of your experience.</p>
+
+        <section id="about">
+            <h2 class="fancy-header">About Me</h2>
+            <p>Details about your academic background and interests.</p>
         </section>
-        
-        <section id="research" class="section">
-            <h1>Research</h1>
-            <p>Describe your research topics and projects.</p>
+
+        <section id="cv">
+            <h2 class="fancy-header">Curriculum Vitae</h2>
+            <p>Link or embed your CV here.</p>
         </section>
-        
-        <section id="publications" class="section">
-            <h1>Publications</h1>
-            <p>List your academic papers and articles with links.</p>
+
+        <section id="research">
+            <h2 class="fancy-header">Research</h2>
+            <p>Highlight your research projects.</p>
         </section>
-        
-        <section id="contact" class="section">
-            <h1>Contact</h1>
-            <p>Provide your email or contact form.</p>
+
+        <section id="publications">
+            <h2 class="fancy-header">Publications</h2>
+            <p>List of your publications.</p>
         </section>
-    </main>
+
+        <section id="contact">
+            <h2 class="fancy-header">Contact</h2>
+            <p>Ways to reach you.</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
