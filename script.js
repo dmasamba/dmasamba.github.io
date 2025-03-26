@@ -12,3 +12,16 @@ document.querySelectorAll('.sidebar ul li a').forEach(anchor => {
         }
     });
 });
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    // Change button text based on mode
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeToggle.textContent = "☀️ Light Mode";
+    } else {
+        darkModeToggle.textContent = "🌙 Dark Mode";
+    }
+});
