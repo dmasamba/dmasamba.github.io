@@ -1,51 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Academic Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <div class="sidebar">
-        <h2>Your Name</h2>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    
-    <div class="main-content">
-        <section id="about">
-            <h1>About Me</h1>
-            <p>Write a short bio about your research interests and background.</p>
-        </section>
-        
-        <section id="cv">
-            <h1>Curriculum Vitae</h1>
-            <p>Include a downloadable PDF or list of your experience.</p>
-        </section>
-        
-        <section id="research">
-            <h1>Research</h1>
-            <p>Describe your research topics and projects.</p>
-        </section>
-        
-        <section id="publications">
-            <h1>Publications</h1>
-            <p>List your academic papers and articles with links.</p>
-        </section>
-        
-        <section id="contact">
-            <h1>Contact</h1>
-            <p>Provide your email or contact form.</p>
-        </section>
-    </div>
-</body>
-</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #34495e;
+}
