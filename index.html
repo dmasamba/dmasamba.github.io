@@ -5,53 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Masamba | Ph.D. Researcher in Multi-Agent Reinforcement Learning</title>
     <meta name="description" content="Daniel Masamba is a Ph.D. researcher in the Machine Intelligence Lab at UTRGV working on scalable, decentralized multi-agent reinforcement learning, vision-language agents, and robot learning.">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Link previews (LinkedIn, Slack, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daniel Masamba | Ph.D. Researcher">
+    <meta property="og:description" content="I study how autonomous agents can learn to coordinate effectively at scale, make decisions using local information, and adapt to changing teams and environments.">
+    <meta property="og:url" content="https://dmasamba.github.io/">
+    <meta property="og:image" content="https://dmasamba.github.io/assets/images/daniel-masamba.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EDM%3C/text%3E%3C/svg%3E">
+
+    <!-- Apply the saved (or system) theme before the page paints, to avoid a flash -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="sidebar-name">Daniel Masamba</h1>
-            <p class="sidebar-subtitle">Ph.D. Researcher</p>
-        </div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#honors">Honors</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="dark-mode-toggle">🌙 Dark Mode</button>
-    </nav>
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header" id="site-header">
+        <div class="container wide header-inner">
+            <a class="brand" href="#home"><span class="brand-dot"></span>Daniel Masamba</a>
 
-    <main class="content">
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#recognition">Recognition</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-        <!-- ===================== HOME ===================== -->
-        <section id="home" class="hero">
-            <p class="hero-eyebrow">Ph.D. Researcher &middot; <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, UTRGV</p>
-            <h1>Daniel Masamba</h1>
-            <p class="hero-pitch">I study how learning agents can coordinate effectively at scale, make decisions using local information, and adapt to changing teams and environments.</p>
-            <ul class="tag-list hero-tags">
-                <li>Multi-Agent RL</li>
-                <li>Scalable Coordination</li>
-                <li>Vision-Language Agents</li>
-                <li>Robot Learning</li>
-                <li>Decentralized Decision-Making</li>
-            </ul>
-            <div class="hero-links">
-                <a class="btn btn-light" href="#publications">View Publications</a>
-                <a class="btn btn-outline" href="mailto:daniel.masamba01@utrgv.edu">Email Me</a>
-                <a class="btn btn-outline" href="https://linkedin.com/in/daniel-masamba" target="_blank" rel="noopener">LinkedIn</a>
-                <a class="btn btn-outline" href="https://github.com/dmasamba" target="_blank" rel="noopener">GitHub</a>
+            <div class="header-actions">
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                </button>
+                <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
             </div>
-        </section>
+        </div>
+    </header>
+
+    <!-- ===================== HOME ===================== -->
+    <section class="hero" id="home">
+        <canvas id="swarm" aria-hidden="true"></canvas>
+        <div class="container wide hero-inner">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Ph.D. Researcher &middot; <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, UTRGV</p>
+                <h1>Daniel Masamba</h1>
+                <p class="hero-pitch">I study how autonomous agents can learn to coordinate effectively at scale, make decisions using local information, and adapt to changing teams and environments.</p>
+
+                <ul class="hero-tags">
+                    <li class="area-marl">Multi-Agent RL</li>
+                    <li class="area-marl">Scalable Coordination</li>
+                    <li class="area-vl">Vision-Language Agents</li>
+                    <li class="area-robot">Robot Learning</li>
+                    <li class="area-rl">Decentralized Decision-Making</li>
+                </ul>
+
+                <div class="hero-links">
+                    <a class="btn btn-primary" href="#publications">View publications</a>
+                    <a class="btn btn-ghost" href="mailto:daniel.masamba01@utrgv.edu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email
+                    </a>
+                    <a class="btn btn-ghost" href="https://linkedin.com/in/daniel-masamba" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn
+                    </a>
+                    <a class="btn btn-ghost" href="https://github.com/dmasamba" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-photo">
+                <img src="assets/images/daniel-masamba.jpg" alt="Portrait of Daniel Masamba" width="640" height="640">
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
 
         <!-- ===================== ABOUT ===================== -->
         <section id="about">
-            <h2 class="fancy-header">About Me</h2>
+            <h2 class="section-title">About</h2>
 
             <div class="about-layout">
                 <div class="about-bio">
@@ -83,7 +132,7 @@
 
                     <div class="side-card">
                         <h3>Languages</h3>
-                        <p class="side-text">English, French, Lingala (fluent) &middot; Spanish (basic)</p>
+                        <p>English, French, Lingala (fluent) &middot; Spanish (basic)</p>
                     </div>
                 </aside>
             </div>
@@ -91,94 +140,98 @@
 
         <!-- ===================== RESEARCH ===================== -->
         <section id="research">
-            <h2 class="fancy-header">Research</h2>
+            <h2 class="section-title">Research</h2>
             <p class="section-intro">My work so far spans these areas:</p>
 
-            <div class="card-grid">
-                <article class="card research-card">
+            <div class="research-grid">
+                <article class="research-card area-marl">
                     <h3>Population Scaling in MARL</h3>
                     <p>How do MARL algorithms behave as the number of agents grows? We designed and built <b>MASSMARL</b>, a GPU-native JAX simulation engine with one array-based API shared by 20 tasks and 10 MARL baselines. It simulates over 16 million agents on a single GPU, and its benchmarking tools identified where widely used baselines hit memory limits.</p>
-                    <p class="card-footnote">CoRL 2026 Workshop</p>
+                    <span class="venue-chip">CoRL 2026 Workshop</span>
                 </article>
 
-                <article class="card research-card">
+                <article class="research-card area-vl">
                     <h3>Vision-Language Agents for Multi-Agent Control</h3>
                     <p>We compared zero-shot and LoRA-adapted vision-language agents with IPPO and MAPPO in cooperative pursuit under visual and structural shifts. Vision-language models adapted from MARL demonstrations were more robust to unseen visual shifts, while the MARL baselines performed best on the training task.</p>
-                    <p class="card-footnote">SCALE Workshop at ICML 2026</p>
+                    <span class="venue-chip">SCALE Workshop at ICML 2026</span>
                 </article>
 
-                <article class="card research-card">
+                <article class="research-card area-robot">
                     <h3>Robot Learning and Embodied AI</h3>
                     <p>For long-horizon robotic manipulation, we developed planner-routed LoRA specialists. For quadruped navigation, we pair a vision-language planner with a reinforcement learning controller for locomotion.</p>
-                    <p class="card-footnote">SCALE Workshop at ICML 2026 &middot; ICMLA 2026</p>
+                    <span class="venue-chip">SCALE Workshop at ICML 2026 &middot; ICMLA 2026</span>
                 </article>
 
-                <article class="card research-card">
+                <article class="research-card area-rl">
                     <h3>Reinforcement Learning for Real-World Decisions</h3>
                     <p>We've also worked on causally guided exploration in sparse-reward environments, and on offline reinforcement learning for safe decision-making in personalized chemotherapy dosing and smart-grid control.</p>
-                    <p class="card-footnote">ACDSA 2025 &middot; ICICT 2025</p>
+                    <span class="venue-chip">ACDSA 2025 &middot; ICICT 2025</span>
                 </article>
             </div>
         </section>
 
         <!-- ===================== PUBLICATIONS ===================== -->
         <section id="publications">
-            <h2 class="fancy-header">Publications</h2>
+            <h2 class="section-title">Publications</h2>
 
             <div class="pub-year">
                 <h3 class="pub-year-label">2026</h3>
+                <div class="pub-list">
+                    <!-- Not posted yet. To make it clickable, replace the opening <article class="publication"> with
+                         <a class="publication" href="PAPER LINK" target="_blank" rel="noopener"> and the closing </article> with </a> -->
+                    <article class="publication">
+                        <h4>MASSMARL: Measuring Population Scaling in Multi-Agent Reinforcement Learning</h4>
+                        <p class="pub-authors"><b>D. Masamba</b>, C. I. Narcia-Macias, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">Conference on Robot Learning (CoRL) 2026 Workshop: From Simulation Benchmarks to Real-World Robot Learning</p>
+                    </article>
 
-                <article class="publication">
-                    <h4>MASSMARL: Measuring Population Scaling in Multi-Agent Reinforcement Learning</h4>
-                    <p class="pub-authors"><b>D. Masamba</b>, C. I. Narcia-Macias, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">Conference on Robot Learning (CoRL) 2026 Workshop: From Simulation Benchmarks to Real-World Robot Learning</p>
-                </article>
+                    <a class="publication" href="https://openreview.net/forum?id=VjEPtCPaeo" target="_blank" rel="noopener">
+                        <h4>Zero-Shot Utility and Efficient Adaptation in Vision-Language Multi-Agent Control</h4>
+                        <p class="pub-authors"><b>D. Masamba</b>, C. I. Narcia-Macias, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">SCALE Workshop at the International Conference on Machine Learning (ICML) 2026</p>
+                    </a>
 
-                <article class="publication">
-                    <h4>Zero-Shot Utility and Efficient Adaptation in Vision-Language Multi-Agent Control</h4>
-                    <p class="pub-authors"><b>D. Masamba</b>, C. I. Narcia-Macias, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">SCALE Workshop at the International Conference on Machine Learning (ICML) 2026</p>
-                </article>
+                    <a class="publication" href="https://openreview.net/forum?id=9Cw18Y0qF5" target="_blank" rel="noopener">
+                        <h4>Specialist VLA: Planner-Routed LoRA Specialization for Long-Horizon Robotic Manipulation</h4>
+                        <p class="pub-authors">C. I. Narcia-Macias, <b>D. Masamba</b>, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">SCALE Workshop at the International Conference on Machine Learning (ICML) 2026</p>
+                    </a>
 
-                <article class="publication">
-                    <h4>Specialist VLA: Planner-Routed LoRA Specialization for Long-Horizon Robotic Manipulation</h4>
-                    <p class="pub-authors">C. I. Narcia-Macias, <b>D. Masamba</b>, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">SCALE Workshop at the International Conference on Machine Learning (ICML) 2026</p>
-                </article>
-
-                <article class="publication">
-                    <h4>Vision–Language Guided Quadruped Navigation with Reinforcement Learning Control</h4>
-                    <p class="pub-authors">C. Y. Wang, H. Lugo, C. I. Narcia-Macias, <b>D. Masamba</b>, P. Gu, H. Tang, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">International Conference on Machine Learning and Applications (ICMLA) 2026</p>
-                </article>
+                    <a class="publication" href="https://ieeexplore.ieee.org/document/11760874" target="_blank" rel="noopener">
+                        <h4>Vision–Language Guided Quadruped Navigation with Reinforcement Learning Control</h4>
+                        <p class="pub-authors">C. Y. Wang, H. Lugo, C. I. Narcia-Macias, <b>D. Masamba</b>, P. Gu, H. Tang, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">International Conference on Machine Learning and Applications (ICMLA) 2026</p>
+                    </a>
+                </div>
             </div>
 
             <div class="pub-year">
                 <h3 class="pub-year-label">2025</h3>
+                <div class="pub-list">
+                    <a class="publication" href="https://ieeexplore.ieee.org/document/11166076" target="_blank" rel="noopener">
+                        <h4>Guided Exploration in Sparse Reward Environments Using Causal Prior Knowledge</h4>
+                        <p class="pub-authors">E. Enriquez, C. I. Narcia-Macias, <b>D. Masamba</b>, D. Kim</p>
+                        <p class="pub-venue">International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2025</p>
+                    </a>
 
-                <article class="publication">
-                    <h4>Guided Exploration in Sparse Reward Environments Using Causal Prior Knowledge</h4>
-                    <p class="pub-authors">E. Enriquez, C. I. Narcia-Macias, <b>D. Masamba</b>, D. Kim</p>
-                    <p class="pub-venue">International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2025</p>
-                </article>
+                    <a class="publication" href="https://link.springer.com/chapter/10.1007/978-981-96-6429-0_39" target="_blank" rel="noopener">
+                        <h4>Personalized Chemotherapy Dosing through Offline Reinforcement Learning</h4>
+                        <p class="pub-authors">H. Lugo, A. Peredo, C. I. Narcia-Macias, J. Espinoza, <b>D. Masamba</b>, A. Gandarilla, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">10th International Congress on Information and Communication Technology (ICICT) 2025</p>
+                    </a>
 
-                <article class="publication">
-                    <h4>Personalized Chemotherapy Dosing through Offline Reinforcement Learning</h4>
-                    <p class="pub-authors">H. Lugo, A. Peredo, C. I. Narcia-Macias, J. Espinoza, <b>D. Masamba</b>, A. Gandarilla, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">10th International Congress on Information and Communication Technology (ICICT) 2025</p>
-                </article>
-
-                <article class="publication">
-                    <h4>Offline Reinforcement Learning Approaches for Safe and Effective Smart Grid Control</h4>
-                    <p class="pub-authors">A. Peredo, H. Lugo, C. I. Narcia-Macias, J. Espinoza, <b>D. Masamba</b>, A. Gandarilla, E. Enriquez, D. Kim</p>
-                    <p class="pub-venue">10th International Congress on Information and Communication Technology (ICICT) 2025</p>
-                </article>
+                    <a class="publication" href="https://link.springer.com/chapter/10.1007/978-981-96-6429-0_38" target="_blank" rel="noopener">
+                        <h4>Offline Reinforcement Learning Approaches for Safe and Effective Smart Grid Control</h4>
+                        <p class="pub-authors">A. Peredo, H. Lugo, C. I. Narcia-Macias, J. Espinoza, <b>D. Masamba</b>, A. Gandarilla, E. Enriquez, D. Kim</p>
+                        <p class="pub-venue">10th International Congress on Information and Communication Technology (ICICT) 2025</p>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- ===================== PROJECTS ===================== -->
         <section id="projects">
-            <h2 class="fancy-header">Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <p class="section-intro">Hands-on work outside my main research papers, grouped by theme.</p>
 
             <div class="card-grid three">
@@ -248,133 +301,127 @@
 
         <!-- ===================== EXPERIENCE ===================== -->
         <section id="experience">
-            <h2 class="fancy-header">Experience</h2>
+            <h2 class="section-title">Experience</h2>
 
-            <div class="exp-group">
-                <h3 class="subsection-title">Research</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4><a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, UTRGV</h4>
-                            <span class="timeline-date">Apr 2022 – Present</span>
-                        </div>
-                        <p class="timeline-role">Graduate Research Assistant (Aug 2024 – Present) &middot; Undergraduate Research Assistant (Apr 2022 – May 2024)</p>
-                        <ul class="bullets">
-                            <li>Investigate decentralized MARL coordination and scalability, including population scaling, robust policy learning, and adaptation across agents and environments.</li>
-                            <li>Designed and built the MASSMARL simulation engine and benchmark, and first-authored the vision-language vs. MARL evaluation study.</li>
-                            <li>Collaborate on robot manipulation, quadruped navigation, causal exploration, and offline RL for healthcare and smart grids.</li>
-                        </ul>
+            <h3 class="exp-group-title">Research</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4><a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, UTRGV</h4>
+                        <span class="timeline-date">Apr 2022 – Present</span>
                     </div>
+                    <p class="timeline-role">Graduate Research Assistant (Aug 2024 – Present) &middot; Undergraduate Research Assistant (Apr 2022 – May 2024)</p>
+                    <ul class="bullets">
+                        <li>Investigate decentralized MARL coordination and scalability, including population scaling, robust policy learning, and adaptation across agents and environments.</li>
+                        <li>Designed and built the MASSMARL simulation engine and benchmark, and first-authored the vision-language vs. MARL evaluation study.</li>
+                        <li>Collaborate on robot manipulation, quadruped navigation, causal exploration, and offline RL for healthcare and smart grids.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Multiple Autonomous Robot Systems Lab, UTRGV</h4>
-                            <span class="timeline-date">Apr 2023 – Jun 2024</span>
-                        </div>
-                        <p class="timeline-role">Undergraduate Research Assistant</p>
-                        <ul class="bullets">
-                            <li>Researched cooperative swarm-robot behaviors, with a focus on scalable foraging and multi-robot coordination.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Multiple Autonomous Robot Systems Lab, UTRGV</h4>
+                        <span class="timeline-date">Apr 2023 – Jun 2024</span>
                     </div>
+                    <p class="timeline-role">Undergraduate Research Assistant</p>
+                    <ul class="bullets">
+                        <li>Researched cooperative swarm-robot behaviors, with a focus on scalable foraging and multi-robot coordination.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="exp-group">
-                <h3 class="subsection-title">Teaching &amp; Mentoring</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Instructor, CSCI 1101: Introduction to Computer Science, UTRGV</h4>
-                            <span class="timeline-date">Jan 2025 – May 2025</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Taught an introductory lab covering core areas of computer science, career paths in the field, and the fundamentals of computational problem solving.</li>
-                        </ul>
+            <h3 class="exp-group-title">Teaching &amp; Mentoring</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Instructor, CSCI 1101: Introduction to Computer Science, UTRGV</h4>
+                        <span class="timeline-date">Jan 2025 – May 2025</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Taught an introductory lab covering core areas of computer science, career paths in the field, and the fundamentals of computational problem solving.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Mathematics Tutor, UTRGV</h4>
-                            <span class="timeline-date">Jun 2023 – Jul 2024</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Tutored college algebra, precalculus, calculus I–II, and linear algebra.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Mathematics Tutor, UTRGV</h4>
+                        <span class="timeline-date">Jun 2023 – Jul 2024</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Tutored college algebra, precalculus, calculus I–II, and linear algebra.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Peer-Led Team Learning (PLTL) Leader, UTRGV</h4>
-                            <span class="timeline-date">Aug 2022 – May 2023</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Helped students understand course concepts, requirements, and instructor expectations in math and computer science courses.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Peer-Led Team Learning (PLTL) Leader, UTRGV</h4>
+                        <span class="timeline-date">Aug 2022 – May 2023</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Helped students understand course concepts, requirements, and instructor expectations in math and computer science courses.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Student Learning Assistant, South Texas College</h4>
-                            <span class="timeline-date">Jul 2018 – Dec 2019</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Tutored students in Cisco networking classes, Microsoft Office, college algebra, and developmental math.</li>
-                            <li>Received the Tutor of the Week Award (October 2019).</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Student Learning Assistant, South Texas College</h4>
+                        <span class="timeline-date">Jul 2018 – Dec 2019</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Tutored students in Cisco networking classes, Microsoft Office, college algebra, and developmental math.</li>
+                        <li>Received the Tutor of the Week Award (October 2019).</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="exp-group">
-                <h3 class="subsection-title">Data &amp; Networking</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Data Analyst Intern, UTRGV</h4>
-                            <span class="timeline-date">Sep 2021 – May 2022</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Supported research evaluating student retention and graduation outcomes at a Hispanic-Serving Institution, including collecting and analyzing student and faculty surveys and focus group interviews.</li>
-                        </ul>
+            <h3 class="exp-group-title">Data &amp; Networking</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Data Analyst Intern, UTRGV</h4>
+                        <span class="timeline-date">Sep 2021 – May 2022</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Supported research evaluating student retention and graduation outcomes at a Hispanic-Serving Institution, including collecting and analyzing student and faculty surveys and focus group interviews.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Network Specialist, Center for Life Resources</h4>
-                            <span class="timeline-date">Feb 2020 – Dec 2020</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Coordinated the development, implementation, and maintenance of local and wide area networks, including installation, testing, and upgrades.</li>
-                            <li>Named Employee of the Month.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Network Specialist, Center for Life Resources</h4>
+                        <span class="timeline-date">Feb 2020 – Dec 2020</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Coordinated the development, implementation, and maintenance of local and wide area networks, including installation, testing, and upgrades.</li>
+                        <li>Named Employee of the Month.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Network Services Technician (Capstone), South Texas College</h4>
-                            <span class="timeline-date">Aug 2019 – Oct 2019</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Installed, repaired, and maintained network and telecommunication equipment, and supported day-to-day network operations.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Network Services Technician (Capstone), South Texas College</h4>
+                        <span class="timeline-date">Aug 2019 – Oct 2019</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Installed, repaired, and maintained network and telecommunication equipment, and supported day-to-day network operations.</li>
+                    </ul>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-head">
-                            <h4>Network Technician Intern, Esylog</h4>
-                            <span class="timeline-date">Jul 2016 – Jul 2017</span>
-                        </div>
-                        <ul class="bullets">
-                            <li>Assisted with routing and switching, office management, and data entry.</li>
-                        </ul>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <h4>Network Technician Intern, Esylog</h4>
+                        <span class="timeline-date">Jul 2016 – Jul 2017</span>
                     </div>
+                    <ul class="bullets">
+                        <li>Assisted with routing and switching, office management, and data entry.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ===================== HONORS & COMMUNITY ===================== -->
-        <section id="honors">
-            <h2 class="fancy-header">Honors &amp; Community</h2>
+        <!-- ===================== RECOGNITION & SERVICE ===================== -->
+        <section id="recognition">
+            <h2 class="section-title">Recognition &amp; Service</h2>
 
             <div class="card-grid three">
                 <div class="card">
@@ -406,62 +453,41 @@
                 </div>
             </div>
         </section>
-
-        <!-- ===================== CONTACT ===================== -->
-        <section id="contact">
-            <h2 class="fancy-header">Contact</h2>
-            <div class="contact-container">
-                <div class="contact-intro">
-                    <p>Get in touch if you'd like to discuss a research opportunity, explore a collaboration, or ask about my work in multi-agent reinforcement learning, vision-language agents, or robot learning.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-info">
-                            <h4>Email</h4>
-                            <a href="mailto:daniel.masamba01@utrgv.edu">daniel.masamba01@utrgv.edu</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="assets/images/LinkedIn_logo_initials.png" alt="LinkedIn" class="contact-logo">
-                        </div>
-                        <div class="contact-info">
-                            <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/daniel-masamba" target="_blank" rel="noopener">linkedin.com/in/daniel-masamba</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="assets/images/github logo.webp" alt="GitHub" class="contact-logo">
-                        </div>
-                        <div class="contact-info">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/dmasamba" target="_blank" rel="noopener">github.com/dmasamba</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <span class="lab-logo contact-lab-logo"><img src="assets/images/miutrgv_logo.png" alt="Machine Intelligence Lab"></span>
-                        </div>
-                        <div class="contact-info">
-                            <h4>MI Lab</h4>
-                            <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">miutrgv.github.io</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <p>&copy; 2026 Daniel Masamba &middot; <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, University of Texas Rio Grande Valley</p>
-        </footer>
     </main>
 
-    <script src="script.js"></script>
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+        <div class="container contact-inner">
+            <div>
+                <h2 class="section-title">Contact</h2>
+                <p>I'd love to connect! Whether you'd like to explore a research collaboration, discuss opportunities, or simply exchange ideas about multi-agent reinforcement learning, vision-language agents, or robot learning, feel free to reach out.</p>
+            </div>
+
+            <div class="contact-links">
+                <a href="mailto:daniel.masamba01@utrgv.edu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    Email<small>daniel.masamba01@utrgv.edu</small>
+                </a>
+                <a href="https://linkedin.com/in/daniel-masamba" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                    LinkedIn<small>linkedin.com/in/daniel-masamba</small>
+                </a>
+                <a href="https://github.com/dmasamba" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
+                    GitHub<small>github.com/dmasamba</small>
+                </a>
+                <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">
+                    <img class="lab-logo" src="assets/images/miutrgv_logo.png" alt="">
+                    Machine Intelligence Lab<small>miutrgv.github.io</small>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Daniel Masamba &middot; <a href="https://miutrgv.github.io/" target="_blank" rel="noopener">Machine Intelligence Lab</a>, University of Texas Rio Grande Valley</p>
+    </footer>
+
+    <script src="script.js?v=2"></script>
 </body>
 </html>
